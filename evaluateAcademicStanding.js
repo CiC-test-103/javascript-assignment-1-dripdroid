@@ -2,28 +2,55 @@ function evaluateAcademicStanding(GPA, major) {
     
 //**************DO NO WRITE ABOVE THIS LINE********************
 
-// 1. Inside the function, declare a variable called academicStanding.
+let academicStanding;
 
-// 2. Use conditional statements to determine the academic standing based on the GPA:
-// - If GPA is greater than 3, set academicStanding to "Good".
-// - If GPA is between 2 and 3, set academicStanding to "Average".
-// - If GPA is less than or equal to 2, set academicStanding to "Probation".
+    // Determine academic standing based on GPA
+    if (GPA > 3) {
+        academicStanding = "Good";
+    } else if (GPA > 2 && GPA <= 3) {
+        academicStanding = "Average";
+    } else if (GPA <= 2) {
+        academicStanding = "Probation";
+    }
 
-// 3. Based on the academicStanding:
-// - If academicStanding is "Good", use a switch statement to provide advice based on the major:
-//   - For "Computer Science", suggest taking advanced courses.
-//   - For "Engineering", suggest focusing on core courses.
-//   - For "Business", suggest exploring internship opportunities.
-//   - For any other major, suggest planning the course schedule accordingly.
-//   - Additionally, if GPA is greater than or equal to 3.5, suggest eligibility for honors program consideration.
-
-// - If academicStanding is "Average", use a switch statement to provide advice based on the major:
-//   - For "Computer Science", suggest seeking help from tutors.
-//   - For "Engineering", suggest attending review sessions.
-//   - For "Business", suggest focusing on improving grades in core courses.
-//   - For any other major, suggest reviewing study habits and seeking academic advising if needed.
-
-// - If academicStanding is "Probation", suggest prioritizing grade improvement and seeking academic support.
+    // Output advice based on academic standing and major
+    if (academicStanding === "Good") {
+        // Switch-case based on major
+        switch (major) {
+            case "Computer Science":
+                console.log("Your academic standing is good. Consider taking advanced courses in algorithms and data structures.");
+                break;
+            case "Engineering":
+                console.log("Your academic standing is good. Focus on your core engineering courses.");
+                break;
+            case "Business":
+                console.log("Your academic standing is good. Explore internship opportunities in the business field.");
+                break;
+            default:
+                console.log("Your academic standing is good. Plan your course schedule accordingly.");
+        }
+        // Check GPA for honors consideration
+        if (GPA >= 3.5) {
+            console.log("With your GPA, you may be eligible for honors program consideration.");
+        }
+    } else if (academicStanding === "Average") {
+        // Switch-case based on major
+        switch (major) {
+            case "Computer Science":
+                console.log("Your academic standing is average. Consider seeking help from tutors for challenging courses.");
+                break;
+            case "Engineering":
+                console.log("Your academic standing is average. Attend review sessions for difficult subjects.");
+                break;
+            case "Business":
+                console.log("Your academic standing is average. Focus on improving your grades in core business courses.");
+                break;
+            default:
+                console.log("Your academic standing is average. Review your study habits and seek academic advising if needed.");
+        }
+    } else if (academicStanding === "Probation") {
+        console.log("Your academic standing is below average. It's important to prioritize improving your grades and seeking academic support.");
+    }
 
 
 //**************DO NO WRITE BELOW THIS LINE********************
